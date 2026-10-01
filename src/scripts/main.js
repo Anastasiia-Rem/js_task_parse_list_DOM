@@ -16,14 +16,14 @@ const sortList = (list) => {
 };
 
 const getEmployees = (list) => {
-  return list.reduce((object, employee) => {
-    object.name = employee.innerText;
-    object.position = employee.dataset.position;
-    object.salary = employee.dataset.salary;
-    object.age = employee.dataset.age;
-
-    return object;
-  }, {});
+  return list.map((employee) => {
+    return {
+      name: employee.innerText,
+      position: employee.dataset.position,
+      salary: employee.dataset.salary,
+      age: employee.dataset.age,
+    };
+  });
 };
 
 sortList(employeeList);
